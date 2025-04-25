@@ -17,7 +17,7 @@ export default function EditStudent() {
     useEffect(() => {
         const fetchStudent = async () => {
             try {
-                const res = await axios.get(`${process.env.Backend}/api/student/${id}`); // Ensure this URL is correct
+                const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/student/${id}`); // Ensure this URL is correct
                 res.dob = res.dob?.slice(0, 10);
                 setStudent(res.data);
             } catch (err) {
@@ -35,7 +35,7 @@ export default function EditStudent() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`${process.env.Backend}/api/student/${id}`, student); // Ensure this URL is correct
+            await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/student/${id}`, student); // Ensure this URL is correct
             alert('Student updated successfully!');
             navigate('/students'); // Redirect to the students list
         } catch (err) {
