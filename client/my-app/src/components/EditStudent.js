@@ -17,7 +17,7 @@ export default function EditStudent() {
     useEffect(() => {
         const fetchStudent = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/student/${id}`); // Ensure this URL is correct
+                const res = await axios.get(`${process.env.Backend}/api/student/${id}`); // Ensure this URL is correct
                 res.dob = res.dob?.slice(0, 10);
                 setStudent(res.data);
             } catch (err) {
