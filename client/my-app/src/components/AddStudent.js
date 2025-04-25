@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function AddStudent({id}) {
+function AddStudent() {
     const [student, setStudent] = useState({
         name: '',
         email: '',
