@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export default function EditStudent({id}) {
+export default function EditStudent() {
     const { id } = useParams(); // Get the Age from the URL
     const navigate = useNavigate();
 
