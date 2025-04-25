@@ -58,7 +58,7 @@ export default function StudentList() {
                   <td>{student.age}</td>
                   <td>{student.department}</td>
                   <td>
-                    <Link to={/edit/${student._id}} className="btn btn-sm btn-primary me-2">Edit</Link>
+                    <Link to={`/edit/${student._id}`} className="btn btn-sm btn-primary me-2">Edit</Link>
                     <button onClick={() => deleteStudent(student._id)} className="btn btn-sm btn-danger">Delete</button>
                   </td>
                 </tr>
