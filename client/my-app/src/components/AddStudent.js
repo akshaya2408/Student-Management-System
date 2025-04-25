@@ -18,7 +18,7 @@ function AddStudent() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.Backend}/api/student/${id}`, student) // Ensure this URL is correct
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/student/${id}`, student) // Ensure this URL is correct
             .then(() => {
                 alert('Student added successfully!');
                 navigate('/students');
