@@ -8,7 +8,7 @@ export default function StudentList() {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/student');
+        const res = await axios.get(`${process.env.Backend}/api/student/${id}`);
         setStudents(res.data);
       } catch (error) {
         console.error("Error fetching students:", error);
@@ -21,7 +21,7 @@ export default function StudentList() {
   
   const deleteStudent = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/student/${id}`);
+      await axios.delete(`${process.env.Backend}/api/student/${id}`);
       setStudents(students.filter(s => s._id !== id));
     } catch (error) {
       console.error("Error deleting student:", error);
