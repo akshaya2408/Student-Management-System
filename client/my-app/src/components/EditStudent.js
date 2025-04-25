@@ -35,7 +35,7 @@ export default function EditStudent() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/student/${id}`, student); // Ensure this URL is correct
+            await axios.put(`${process.env.Backend}/api/student/${id}`, student); // Ensure this URL is correct
             alert('Student updated successfully!');
             navigate('/students'); // Redirect to the students list
         } catch (err) {
