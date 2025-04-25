@@ -8,7 +8,7 @@ export default function StudentList() {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await axios.get(${process.env.REACT_APP_BACKEND_URL}/api/student);
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/student`);
         setStudents(res.data);
       } catch (error) {
         console.error("Error fetching students:", error);
