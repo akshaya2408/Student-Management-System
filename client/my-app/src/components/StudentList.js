@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function StudentList({id}) {
+export default function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/student/${id}`);
+        const res = await axios.get(${process.env.REACT_APP_BACKEND_URL}/api/student);
         setStudents(res.data);
       } catch (error) {
         console.error("Error fetching students:", error);
@@ -18,10 +18,9 @@ export default function StudentList({id}) {
     fetchStudents();
   }, []);
 
-  
   const deleteStudent = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/student/${id}`);
+      await axios.delete(${process.env.REACT_APP_BACKEND_URL}/api/student/${id});
       setStudents(students.filter(s => s._id !== id));
     } catch (error) {
       console.error("Error deleting student:", error);
@@ -59,7 +58,7 @@ export default function StudentList({id}) {
                   <td>{student.age}</td>
                   <td>{student.department}</td>
                   <td>
-                    <Link to={`/edit/${student._id}`} className="btn btn-sm btn-primary me-2">Edit</Link>
+                    <Link to={/edit/${student._id}} className="btn btn-sm btn-primary me-2">Edit</Link>
                     <button onClick={() => deleteStudent(student._id)} className="btn btn-sm btn-danger">Delete</button>
                   </td>
                 </tr>
