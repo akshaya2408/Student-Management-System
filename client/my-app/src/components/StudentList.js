@@ -20,7 +20,7 @@ export default function StudentList() {
 
   const deleteStudent = async (id) => {
     try {
-      await axios.delete(${process.env.REACT_APP_BACKEND_URL}/api/student/${id});
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/student/${id}`);
       setStudents(students.filter(s => s._id !== id));
     } catch (error) {
       console.error("Error deleting student:", error);
